@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { StudentPageRoutingModule } from './student-routing.module';
 
 import { StudentPage } from './student.page';
+import { UserService } from 'src/app/core/user.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { StudentPage } from './student.page';
     IonicModule,
     StudentPageRoutingModule
   ],
-  declarations: [StudentPage]
+  declarations: [StudentPage],
+  providers: [UserService]
 })
 export class StudentPageModule {}

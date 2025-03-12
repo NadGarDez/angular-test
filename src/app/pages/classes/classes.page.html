@@ -10,4 +10,15 @@
       <ion-title size="large">classes</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div *ngIf="booking$ | async as data">
+    <pre>{{ data | json }}</pre>
+  </div>
+  <div *ngIf="(booking$ | async) === null">
+    Loading...
+  </div>
+
+  <div *ngIf="(booking$ | async) === undefined">
+    An error has occured
+  </div>
 </ion-content>

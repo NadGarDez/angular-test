@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>student</ion-title>
+    <ion-title>students</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,15 @@
       <ion-title size="large">student</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div *ngIf="users$ | async as data">
+    <pre>{{ data | json }}</pre>
+  </div>
+  <div *ngIf="(users$ | async) === null">
+    Loading...
+  </div>
+
+  <div *ngIf="(users$ | async) === undefined">
+    An error has occured
+  </div>
 </ion-content>
