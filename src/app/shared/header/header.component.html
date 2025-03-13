@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid class="custom-header">
+      <ion-row class="ion-hide-sm-down ion-align-items-center">
+        <ion-col size="auto" class="ion-justiry-content-center">
+          <ion-title color="primary">SuperApp</ion-title>
+        </ion-col>
+        <ion-col class="custom-row" size="auto">
+          <div class="ion-margin-horizontal">
+            <a class="no-decoration" routerLink="/home"><ion-text [color]="isHomeActive() ? 'primary' : 'secondary'">
+                <p>Home</p>
+              </ion-text></a>
+          </div>
+
+          <div class="ion-margin-horizontal">
+            <a class="no-decoration" routerLink="/students"><ion-text
+                [color]="isStudentsActive() ? 'primary':'secondary'">
+                <p>Students</p>
+              </ion-text></a>
+          </div>
+          <div class="ion-margin-horizontal">
+            <a class="no-decoration" routerLink="/classes"><ion-text
+                [color]="isClassesActive() ? 'primary': 'secondary'">
+                <p>Classes</p>
+              </ion-text></a>
+          </div>
+          <div class="ion-margin-horizontal">
+            <a class="no-decoration" routerLink="/tutors"><ion-text [color]="isTutorsActive() ? 'primary': 'secondary'">
+                <p>Tutors</p>
+              </ion-text></a>
+          </div>
+
+        </ion-col>
+        <ion-col class="custom-flex-end grow">
+          <ion-button fill="clear"><ion-icon name="person-outline"></ion-icon></ion-button>
+        </ion-col>
+
+      </ion-row>
+      <ion-row class="ion-hide-sm-up ion-align-items-center">
+        <ion-col size="6">
+          <ion-title color="primary">SA</ion-title> <!-- should be an image -->
+        </ion-col>
+        <ion-col size="6" class="ion-align-items-center custom-flex-end">
+          <ion-menu-button><ion-icon color="secondary" name="menu-outline"></ion-icon></ion-menu-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>

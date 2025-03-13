@@ -8,13 +8,15 @@ import { StudentPageRoutingModule } from './student-routing.module';
 
 import { StudentPage } from './student.page';
 import { UserService } from 'src/app/core/user.service';
+import { HeaderComponent } from 'src/app/shared/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StudentPageRoutingModule
+    StudentPageRoutingModule,
+    HeaderComponent
   ],
   declarations: [StudentPage],
   providers: [UserService]

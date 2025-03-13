@@ -1,0 +1,18 @@
+.custom-row {
+  display: flex;
+  flex-direction: row;
+}
+.custom-flex-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+.grow {
+  flex-grow: 1 
+}
+
+.no-decoration {
+  text-decoration:none;
+}

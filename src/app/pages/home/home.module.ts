@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { HeaderComponent } from 'src/app/shared/header/header.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     HomePageRoutingModule,
     RouterLink,
     RouterLinkActive,
+    HeaderComponent
   ],
   declarations: [HomePage],
 })

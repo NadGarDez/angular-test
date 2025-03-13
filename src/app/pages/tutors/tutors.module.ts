@@ -8,13 +8,15 @@ import { TutorsPageRoutingModule } from './tutors-routing.module';
 
 import { TutorsPage } from './tutors.page';
 import { TutorService } from 'src/app/core/tutor.service';
+import { HeaderComponent } from 'src/app/shared/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TutorsPageRoutingModule
+    TutorsPageRoutingModule,
+    HeaderComponent
   ],
   declarations: [TutorsPage],
   providers: [TutorService]
