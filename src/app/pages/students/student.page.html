@@ -6,15 +6,38 @@
 
 <ion-content [fullscreen]="true">
   <app-header></app-header>
+  <div class="ion-padding">
 
-  <div *ngIf="users$ | async as data">
-    <pre>{{ data | json }}</pre>
-  </div>
-  <div *ngIf="(users$ | async) === null">
-    Loading...
+    <div class="container shadow ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text color="primary"><p class="title-page ion-no-margin">Student List</p></ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-input label="Search by name" label-placement="floating" fill="outline" placeholder="Search by name"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div *ngIf="users$ | async as data">
+              <div *ngFor="let item of data">
+                <app-student-card [student]="item" />
+              </div>
+            </div>
+            <div *ngIf="(users$ | async) === null">
+              Loading...
+            </div>
+
+            <div *ngIf="(users$ | async) === undefined">
+              An error has occured
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </div>
 
-  <div *ngIf="(users$ | async) === undefined">
-    An error has occured
-  </div>
 </ion-content>

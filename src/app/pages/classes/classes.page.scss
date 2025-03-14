@@ -1,0 +1,26 @@
+.container {
+    background-color: rgb(224, 219, 200);;
+    border-radius: 12px;
+    flex: 1;
+}
+
+.shadow {
+    box-shadow: -5px 10px 8px -3px rgba(0, 0, 0, 0.40);
+    -webkit-box-shadow: -5px 10px 8px -3px rgba(0, 0, 0, 0.58);
+    -moz-box-shadow: -5px 10px 8px -3px rgba(0, 0, 0, 0.58);
+}
+
+
+.title-page {
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0px;
+}
+
+.div-line {
+    width: 100%;
+    height: 1px;
+    background-color: #00000050;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

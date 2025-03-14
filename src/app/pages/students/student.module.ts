@@ -9,6 +9,7 @@ import { StudentPageRoutingModule } from './student-routing.module';
 import { StudentPage } from './student.page';
 import { UserService } from 'src/app/core/user.service';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
+import { StudentCardComponent } from 'src/app/shared/student-card/student-card.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from 'src/app/shared/header/header.component';
     FormsModule,
     IonicModule,
     StudentPageRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    StudentCardComponent
   ],
   declarations: [StudentPage],
   providers: [UserService]
