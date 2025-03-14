@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookingService } from 'src/app/core/booking.service';
 import { BookingList } from 'src/app/shared/api.model';
@@ -9,12 +9,17 @@ import { BookingList } from 'src/app/shared/api.model';
   standalone: false,
 })
 export class ClassesPage implements OnInit {
+  inputValue = signal('');
+  booking = signal<BookingList>([]);
 
-  booking$!: Observable<BookingList>;
-  constructor(private service: BookingService) { }
+  constructor(private service: BookingService) {}
 
-  ngOnInit() { 
-    this.booking$ = this.service.getBooking()
+  ngOnInit() {
+    this.service.getBooking().subscribe((item) => {
+      this.booking.set(item);
+    });
   }
-
+  onInput(event: any) {
+    this.inputValue.set(event.target.value);
+  }
 }

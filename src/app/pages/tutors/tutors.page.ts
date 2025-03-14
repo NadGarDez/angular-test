@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, computed, OnInit, Signal, signal } from '@angular/core';
 import { TutorService } from 'src/app/core/tutor.service';
 import { TutorList } from 'src/app/shared/api.model';
 
@@ -10,10 +9,24 @@ import { TutorList } from 'src/app/shared/api.model';
   standalone: false,
 })
 export class TutorsPage implements OnInit {
-  tutors$!: Observable<TutorList>
+  
+  inputValue = signal('')
+  tu = signal<TutorList>([])
+
+  filteredTutors: Signal<TutorList> = computed(()=> this.tu().filter(item=> item.first_name.includes(this.inputValue()) || item.last_name.includes(this.inputValue())))
+  
   constructor(private service: TutorService) {}
 
   ngOnInit() {
-    this.tutors$ = this.service.getTutors()
+    this.service.getTutors().subscribe(
+      item => {
+        this.tu.set(item)
+      }
+    )
   }
+  onInput(event: any) {
+    this.inputValue.set(event.target.value);
+  }
+  
 }
+

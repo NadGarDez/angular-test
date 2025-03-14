@@ -12,25 +12,25 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-input label="Search by name" label-placement="floating" fill="outline"
+            <ion-input label="Search by name" label-placement="floating" (input)="onInput($event)" fill="outline"
               placeholder="Search by name"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <div *ngIf="booking$ | async as data">
-              <div *ngFor="let item of data">
-                <p>{{item.id}}</p>
+            <!-- <div class="resultContainer" *ngIf="booking$ | async as data"> -->
+              <div *ngFor="let item of booking()">
+                <app-class-card [booking]="item" />
               </div>
               
-            </div>
-            <div *ngIf="(booking$ | async) === null">
+            <!-- </div> -->
+            <!-- <div *ngIf="(booking$ | async) === null">
               Loading...
             </div>
 
             <div *ngIf="(booking$ | async) === undefined">
               An error has occured
-            </div>
+            </div> -->
           </ion-col>
         </ion-row>
       </ion-grid>

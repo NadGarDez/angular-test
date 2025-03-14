@@ -1,9 +1,3 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>students</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content [fullscreen]="true">
   <app-header></app-header>
   <div class="ion-padding">
@@ -17,23 +11,23 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-input label="Search by name" label-placement="floating" fill="outline" placeholder="Search by name"></ion-input>
+            <ion-input label="Search by name" (input)="onInput($event)" label-placement="floating" fill="outline" placeholder="Search by name"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <div *ngIf="users$ | async as data">
-              <div *ngFor="let item of data">
+            <!-- <div class="resultContainer" *ngIf="users$ | async as data"> -->
+              <div *ngFor="let item of filteredUsers()">
                 <app-student-card [student]="item" />
               </div>
-            </div>
-            <div *ngIf="(users$ | async) === null">
+            <!-- </div> -->
+            <!-- <div *ngIf="(users$ | async) === null">
               Loading...
             </div>
 
             <div *ngIf="(users$ | async) === undefined">
               An error has occured
-            </div>
+            </div> -->
           </ion-col>
         </ion-row>
       </ion-grid>
