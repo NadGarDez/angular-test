@@ -8,3 +8,21 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+	--ion-color-principal: #743712;
+	--ion-color-principal-rgb: 116,55,18;
+	--ion-color-principal-contrast: #ffffff;
+	--ion-color-principal-contrast-rgb: 255,255,255;
+	--ion-color-principal-shade: #663010;
+	--ion-color-principal-tint: #824b2a;
+}
+
+.ion-color-principal {
+	--ion-color-base: var(--ion-color-principal);
+	--ion-color-base-rgb: var(--ion-color-principal-rgb);
+	--ion-color-contrast: var(--ion-color-principal-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-principal-contrast-rgb);
+	--ion-color-shade: var(--ion-color-principal-shade);
+	--ion-color-tint: var(--ion-color-principal-tint);
+}
