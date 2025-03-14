@@ -12,14 +12,14 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-input label="Search by name" label-placement="floating" (input)="onInput($event)" fill="outline"
-              placeholder="Search by name"></ion-input>
+            <ion-input label="Search by email" label-placement="floating" (input)="onInput($event)" fill="outline"
+              placeholder="Search by email"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <!-- <div class="resultContainer" *ngIf="booking$ | async as data"> -->
-              <div *ngFor="let item of booking()">
+              <div *ngFor="let item of filteredBooking()">
                 <app-class-card [booking]="item" />
               </div>
               

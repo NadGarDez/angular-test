@@ -24,9 +24,11 @@ export class TutorsPage implements OnInit {
       }
     )
   }
+
   onInput(event: any) {
     this.inputValue.set(event.target.value);
   }
   
 }
+
 
